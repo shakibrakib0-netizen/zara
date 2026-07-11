@@ -66,8 +66,9 @@ button:hover{
     }
 }
 .photo{
-    width:160px;
-    height:220px;
+    width:140px;
+    height:200px;
+}
     object-fit:cover;
     border-radius:20px;
     box-shadow:0 0 25px rgba(255,105,180,.5);
@@ -94,8 +95,9 @@ button:hover{
 }
 
 .photo{
-    width:280px;
-    height:380px;
+    width:140px;
+    height:200px;
+}
     object-fit:cover;
     border-radius:20px;
     box-shadow:0 0 25px rgba(255,105,180,.5);
