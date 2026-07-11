@@ -39,7 +39,7 @@ function createHeart() {
     }, 6000);
 
 }
-const startDate = new Date("2026-05-06T00:00:00");
+cconst startDate = new Date("2025-05-06T00:00:00");
 
 function updateLoveCounter() {
 
