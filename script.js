@@ -16,6 +16,8 @@ function showLove() {
 
     document.getElementById("letter").style.display = "block";
 
+    document.getElementById("bgMusic").play();
+
     setInterval(createHeart, 250);
 
 }
