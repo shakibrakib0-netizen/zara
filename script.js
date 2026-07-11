@@ -105,5 +105,5 @@ function updateLoveCounter() {
         🕒 <strong>${hours}</strong> Hours<br>
         ⏰ <strong>${minutes}</strong> Minutes<br>
         💖 <strong>${seconds}</strong> Seconds
-    `;
-}
+}    
+
