@@ -12,14 +12,18 @@ function typeWriter() {
 
 window.onload = typeWriter;
 
+let started = false;
+
 function showLove() {
 
     document.getElementById("letter").style.display = "block";
 
     document.getElementById("bgMusic").play();
 
-    setInterval(createHeart, 250);
-
+    if (!started) {
+        started = true;
+        setInterval(createHeart, 250);
+    }
 }
 
 function createHeart() {
