@@ -39,3 +39,41 @@ function createHeart() {
     }, 6000);
 
 }
+const startDate = new Date("2026-05-06T00:00:00");
+
+function updateLoveCounter() {
+
+    const now = new Date();
+
+    let diff = now - startDate;
+
+    if (diff < 0) {
+        document.getElementById("loveCounter").innerHTML =
+            "❤️ Our journey begins on 6 May 2026 ❤️";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    diff %= (1000 * 60 * 60 * 24);
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+
+    diff %= (1000 * 60 * 60);
+
+    const minutes = Math.floor(diff / (1000 * 60));
+
+    diff %= (1000 * 60);
+
+    const seconds = Math.floor(diff / 1000);
+
+    document.getElementById("loveCounter").innerHTML = `
+        ❤️ ${days} Days<br>
+        🕒 ${hours} Hours<br>
+        ⏰ ${minutes} Minutes<br>
+        💖 ${seconds} Seconds
+    `;
+}
+
+updateLoveCounter();
+setInterval(updateLoveCounter, 1000);
