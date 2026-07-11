@@ -1,10 +1,14 @@
-/* ===========================
+/* ==========================
    GENERAL
-=========================== */
+========================== */
 
-body{
+*{
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial, Helvetica, sans-serif;
     background:linear-gradient(to bottom,#0f2027,#203a43,#2c5364);
     color:white;
@@ -19,9 +23,9 @@ body{
     padding:60px 20px 120px;
 }
 
-/* ===========================
+/* ==========================
    TITLE
-=========================== */
+========================== */
 
 h1{
     font-size:60px;
@@ -30,36 +34,37 @@ h1{
         0 0 10px #ff4d88,
         0 0 20px #ff4d88,
         0 0 40px #ff4d88;
+    margin-bottom:20px;
 }
 
-h2{
-    color:#ff82b2;
-    margin-top:50px;
+.subtitle{
+    font-size:22px;
+    color:#ffd6e7;
+    margin-bottom:30px;
 }
 
-/* ===========================
-   TYPING TEXT
-=========================== */
+/* ==========================
+   TYPEWRITER
+========================== */
 
 #typing{
-    font-size:24px;
-    margin:30px auto;
-    width:80%;
+    font-size:26px;
+    color:#ffffff;
     min-height:60px;
-    color:#ffe0ec;
+    margin:20px auto 40px;
 }
 
-/* ===========================
+/* ==========================
    BUTTON
-=========================== */
+========================== */
 
 button{
-    padding:18px 40px;
-    font-size:22px;
-    border:none;
-    border-radius:40px;
     background:#ff4d88;
     color:white;
+    border:none;
+    padding:18px 35px;
+    font-size:22px;
+    border-radius:40px;
     cursor:pointer;
     transition:.3s;
     box-shadow:0 0 20px #ff4d88;
@@ -86,9 +91,9 @@ button:hover{
 
 }
 
-/* ===========================
+/* ==========================
    LETTER
-=========================== */
+========================== */
 
 #letter{
     display:none;
@@ -110,15 +115,38 @@ button:hover{
 
 }
 
-/* ===========================
-   GALLERY
-=========================== */
+/* ==========================
+   HEADINGS
+========================== */
+
+h2{
+    margin-top:60px;
+    margin-bottom:25px;
+    color:#ff82b2;
+}
+
+/* ==========================
+   LOVE LETTER
+========================== */
+
+.loveText{
+    width:85%;
+    max-width:800px;
+    margin:auto;
+    font-size:22px;
+    line-height:1.9;
+    color:#ffe6ef;
+}
+
+/* ==========================
+   PHOTO GALLERY
+========================== */
 
 .gallery{
     display:flex;
     justify-content:center;
-    flex-wrap:wrap;
     gap:35px;
+    flex-wrap:wrap;
     margin:40px 0;
 }
 
@@ -127,21 +155,17 @@ button:hover{
 }
 
 .person h3{
-    color:#ff82b2;
     margin-top:15px;
+    color:#ff82b2;
 }
 
-/* ===========================
-   PHOTOS
-=========================== */
-
 .photo{
-    width:220px;
-    height:300px;
+    width:230px;
+    height:310px;
     object-fit:cover;
     border-radius:20px;
     border:3px solid rgba(255,255,255,.2);
-    box-shadow:0 0 30px rgba(255,105,180,.5);
+    box-shadow:0 0 25px rgba(255,105,180,.5);
     transition:.4s;
     animation:floatPhoto 4s ease-in-out infinite;
 }
@@ -157,7 +181,7 @@ button:hover{
     }
 
     50%{
-        transform:translateY(-10px);
+        transform:translateY(-12px);
     }
 
     100%{
@@ -166,27 +190,26 @@ button:hover{
 
 }
 
-/* ===========================
+/* ==========================
    LOVE COUNTER
-=========================== */
+========================== */
 
 #loveCounter{
-    width:fit-content;
     margin:40px auto;
+    width:fit-content;
     padding:20px 35px;
+    border-radius:20px;
     background:rgba(255,255,255,.08);
     backdrop-filter:blur(10px);
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(255,105,180,.4);
-    font-size:30px;
+    font-size:28px;
     color:#ff82b2;
-    font-weight:bold;
     line-height:1.8;
+    box-shadow:0 0 20px rgba(255,105,180,.35);
 }
 
-/* ===========================
-   PROMISE CARD
-=========================== */
+/* ==========================
+   PROMISE BOX
+========================== */
 
 .promise{
 
@@ -201,29 +224,75 @@ button:hover{
 
     backdrop-filter:blur(10px);
 
+    border-radius:20px;
+
     border:1px solid rgba(255,255,255,.15);
 
-    border-radius:25px;
-
-    line-height:1.8;
+    color:#ffe6ef;
 
     font-size:22px;
 
-    color:#ffe0ec;
+    line-height:1.9;
 
     box-shadow:0 0 25px rgba(255,105,180,.25);
 
 }
 
-/* ===========================
+/* ==========================
+   REASONS BOX
+========================== */
+
+#reasonBox{
+
+    width:85%;
+    max-width:700px;
+
+    margin:30px auto;
+
+    padding:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    font-size:24px;
+
+    color:#ffe6ef;
+
+    box-shadow:0 0 20px rgba(255,105,180,.3);
+
+    min-height:80px;
+
+}
+
+/* ==========================
+   HR
+========================== */
+
+hr{
+    width:70%;
+    margin:60px auto;
+    border:none;
+    height:2px;
+    background:rgba(255,255,255,.15);
+}
+
+/* ==========================
    HEARTS
-=========================== */
+========================== */
 
 .heart{
+
     position:fixed;
-    bottom:-50px;
-    pointer-events:none;
+
+    bottom:-30px;
+
     animation:float 6s linear forwards;
+
+    pointer-events:none;
+
 }
 
 @keyframes float{
@@ -240,21 +309,9 @@ button:hover{
 
 }
 
-/* ===========================
-   HORIZONTAL LINE
-=========================== */
-
-hr{
-    width:70%;
-    border:none;
-    height:2px;
-    background:rgba(255,255,255,.2);
-    margin:60px auto;
-}
-
-/* ===========================
+/* ==========================
    MOBILE
-=========================== */
+========================== */
 
 @media(max-width:768px){
 
@@ -262,9 +319,17 @@ hr{
         font-size:40px;
     }
 
+    .subtitle{
+        font-size:18px;
+    }
+
     #typing{
         font-size:20px;
+    }
+
+    .loveText{
         width:95%;
+        font-size:19px;
     }
 
     .photo{
@@ -281,9 +346,14 @@ hr{
         font-size:19px;
     }
 
+    #reasonBox{
+        width:95%;
+        font-size:20px;
+    }
+
     button{
         font-size:18px;
-        padding:15px 30px;
+        padding:15px 28px;
     }
 
 }
