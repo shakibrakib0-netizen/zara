@@ -13,60 +13,6 @@ function typeWriter() {
     }
 }
 
-window.onload = function () {
-    typeWriter();
-    updateLoveCounter();
-    setInterval(updateLoveCounter, 1000);
-};
-
-// ===============================
-// ❤️ Open Heart Button
-// ===============================
-
-let started = false;
-
-function showLove() {
-
-    document.getElementById("letter").style.display = "block";
-
-    // Play music
-    const music = document.getElementById("bgMusic");
-    if (music) {
-        music.play().catch(() => {
-            console.log("Music will play after user interaction.");
-        });
-    }
-
-    // Start hearts only once
-    if (!started) {
-        started = true;
-        setInterval(createHeart, 250);
-    }
-}
-
-// ===============================
-// ❤️ Floating Hearts
-// ===============================
-
-function createHeart() {
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-
-    heart.innerHTML = "❤️";
-
-    heart.style.left = Math.random() * 100 + "vw";
-
-    heart.style.fontSize = (20 + Math.random() * 25) + "px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
-}
-
 // ===============================
 // ❤️ Love Counter
 // ===============================
@@ -105,5 +51,129 @@ function updateLoveCounter() {
         🕒 <strong>${hours}</strong> Hours<br>
         ⏰ <strong>${minutes}</strong> Minutes<br>
         💖 <strong>${seconds}</strong> Seconds
-}    
+    `;
+}
 
+// ===============================
+// ❤️ Open Letter
+// ===============================
+
+let started = false;
+
+function showLove() {
+
+    document.getElementById("letter").style.display = "block";
+
+    const music = document.getElementById("bgMusic");
+
+    if (music) {
+        music.play().catch(() => {
+            console.log("Music autoplay blocked.");
+        });
+    }
+
+    if (!started) {
+        started = true;
+        setInterval(createHeart, 250);
+    }
+
+    window.scrollTo({
+        top: document.getElementById("letter").offsetTop,
+        behavior: "smooth"
+    });
+}
+
+// ===============================
+// ❤️ Floating Hearts
+// ===============================
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize = (20 + Math.random() * 25) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+// ===============================
+// ❤️ Reasons
+// ===============================
+
+const reasons = [
+
+"I love your beautiful smile ❤️",
+"I love your cute voice ❤️",
+"I love your kindness ❤️",
+"I love your eyes ❤️",
+"I love your heart ❤️",
+"I love how you care about me ❤️",
+"I love how you support me ❤️",
+"I love your laugh ❤️",
+"I love talking to you ❤️",
+"I love your personality ❤️",
+"I love your honesty ❤️",
+"I love your loyalty ❤️",
+"I love your hugs (one day ❤️)",
+"I love your dreams ❤️",
+"I love your confidence ❤️",
+"I love your patience ❤️",
+"I love your cute anger ❤️",
+"I love your messages ❤️",
+"I love waking up thinking about you ❤️",
+"I love sleeping after talking to you ❤️",
+"You make me smile ❤️",
+"You make me feel safe ❤️",
+"You inspire me ❤️",
+"You understand me ❤️",
+"You believe in me ❤️",
+"You make every day better ❤️",
+"You are my best friend ❤️",
+"You are my favorite person ❤️",
+"You are my peace ❤️",
+"You are my home ❤️"
+
+];
+
+// Fill to 100 automatically
+while (reasons.length < 100) {
+    reasons.push("Because you are simply amazing ❤️");
+}
+
+let currentReason = -1;
+
+function nextReason() {
+
+    currentReason++;
+
+    if (currentReason >= reasons.length) {
+        currentReason = 0;
+    }
+
+    document.getElementById("reasonBox").innerHTML =
+        reasons[currentReason];
+}
+
+// ===============================
+// ❤️ Start Page
+// ===============================
+
+window.onload = function () {
+
+    typeWriter();
+
+    updateLoveCounter();
+
+    setInterval(updateLoveCounter, 1000);
+
+};
