@@ -77,3 +77,6 @@ button:hover{
 .photo:hover{
     transform:scale(1.05);
 }
+.container{
+    padding-bottom:120px;
+}
